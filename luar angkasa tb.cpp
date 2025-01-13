@@ -42,9 +42,7 @@ void hiddenCarte(){
 void createObject(float radius) {
     GLUquadric* object = gluNewQuadric();
     gluQuadricTexture(object, GL_TRUE); // Mengaktifkan tekstur
-    gluQuadricNormals(object, GLU_SMOOTH); // Permukaan halus
     gluSphere(object, radius, 90, 100); // Membuat bola
-    gluDeleteQuadric(object); // Menghapus objek
 }
 
 // Fungsi untuk membuat latar belakang berbentuk persegi
@@ -88,7 +86,7 @@ void renderText(float x, float y, void* font, const char* string, float r, float
 }
 
 void setupLighting() {
-    glEnable(GL_LIGHTING); //aktifin cahaya
+    glDisable(GL_LIGHTING); //aktifin cahaya
     glEnable(GL_LIGHT0); //aktifin sumber cahaya pertama
 
     // Mengatur properti pencahayaan (sumber cahaya)
@@ -106,7 +104,7 @@ void setupLighting() {
     glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
 }
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 void reshape(int w, int h) {
     if (h == 0) h = 1;
     float ratio = w * 1.0f / h;
@@ -140,9 +138,7 @@ void display() {
     glLoadIdentity();
     gluLookAt(cameraX, cameraY, cameraZ, lookAtX, lookAtY, lookAtZ, 0.0f, 1.0f, 0.0f);
 
-
     glPushMatrix();
-    
     glScalef(scaleFactor, scaleFactor, scaleFactor);
 
     // Menampilkan Matahari
@@ -222,7 +218,7 @@ void display() {
 
     glutSwapBuffers();
 }
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 void keyboard(unsigned char key, int x, int y) {
     switch (key) {
         case '1': viewMode = 1; break;

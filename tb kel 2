@@ -1,5 +1,5 @@
 [Project]
-FileName=angkasa.dev
+FileName=tb kel 2
 Name=angkasa
 Type=1
 Ver=2
@@ -51,7 +51,7 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=tb.cpp
+FileName=luar angkasa tb.cpp
 CompileCpp=1
 Folder=
 Compile=1
